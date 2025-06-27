@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ply-btn::before,
+.ply-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: inherit;
+  transform: translate(-50%, -50%);
+  animation: anim-pulses 2s linear infinite;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.ply-btn::after {
+  animation-delay: 1s; 
+}
+
+.btn {
+  display: block;
+}
+
+
+
+@keyframes anim-pulses {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+}
+.li-menu {
+  position: relative;
+}
+
+.li-menu::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #09aff4;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.li-menu:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.li-menu-1 {
+  position: relative;
+}
+
+.li-menu-1::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #09aff4;
+  border-radius: 50%;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.list-menu {
+  position: relative;
+}
+
+.list-menu::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.list-menu:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
